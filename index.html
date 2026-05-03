@@ -7,9 +7,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary: #FF9933; /* Default Saffron */
+            --primary: #FF9933;
             --white: #FFFFFF;
-            --secondary: #046A38; /* Default Green */
+            --secondary: #046A38;
             --navy: #0a1628;
             --amber: #FFBF00;
             --red: #D32F2F;
@@ -18,432 +18,98 @@
             --text-color: var(--navy);
             --transition: all 0.3s ease;
         }
-
-        body {
-            font-family: 'Inter', sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            line-height: 1.6;
-        }
-
-        .container {
-            max-width: 720px;
-            margin: 0 auto;
-            padding: 0 16px;
-        }
-
-        /* Sticky Header */
-        header {
-            position: sticky;
-            top: 0;
-            background: var(--navy);
-            color: var(--white);
-            padding: 12px 0;
-            z-index: 1000;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-        }
-
-        .header-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            font-weight: 800;
-            font-size: 1.2rem;
-            color: var(--primary);
-            margin: 0;
-            transition: color 0.3s ease;
-        }
-
-        .controls {
-            display: flex;
-            gap: 12px;
-            align-items: center;
-        }
-
-        select, button {
-            background: rgba(255,255,255,0.1);
-            color: var(--white);
-            border: 1px solid rgba(255,255,255,0.2);
-            padding: 8px 12px;
-            border-radius: 8px;
-            font-family: inherit;
-            font-size: 0.9rem;
-            cursor: pointer;
-            transition: var(--transition);
-        }
-
-        select option {
-            background: var(--navy);
-            color: var(--white);
-        }
-
-        button:hover, select:hover {
-            background: rgba(255,255,255,0.2);
-        }
-
-        /* Voice Button */
-        .voice-btn {
-            background: none;
-            border: none;
-            color: var(--primary);
-            font-size: 1.2rem;
-            cursor: pointer;
-            padding: 8px;
-            border-radius: 50%;
-            transition: color 0.3s ease, background 0.3s ease;
-        }
-        
-        .voice-btn:hover {
-            background: rgba(0, 0, 0, 0.05);
-        }
-
-        /* Impact Statement */
-        .impact-statement {
-            background: linear-gradient(135deg, var(--primary) 0%, var(--white) 50%, var(--secondary) 100%);
-            padding: 40px 20px;
-            text-align: center;
-            border-radius: 12px;
-            margin: 24px 0;
-            color: var(--navy);
-            position: relative;
-            overflow: hidden;
-            transition: background 0.5s ease;
-        }
-
-        .impact-statement::before {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; right: 0; bottom: 0;
-            background: rgba(255,255,255,0.85);
-            z-index: 1;
-        }
-
-        .impact-content {
-            position: relative;
-            z-index: 2;
-        }
-
-        .impact-content h1 {
-            font-size: 2rem;
-            margin-bottom: 16px;
-        }
-
-        /* Sections */
-        section {
-            margin-bottom: 48px;
-            background: var(--card-bg);
-            border-radius: 16px;
-            padding: 24px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-        }
-
-        h2 {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-bottom: 2px solid var(--bg-color);
-            padding-bottom: 12px;
-            margin-top: 0;
-            color: var(--secondary);
-            transition: color 0.3s ease;
-        }
-
-        /* Mode Styles */
-        body.mode-basic {
-            font-size: 18px;
-        }
-        
-        body.mode-basic button, body.mode-basic .card {
-            min-height: 52px; /* Giant tap targets */
-        }
-        
-        body.mode-informed {
-            font-size: 16px;
-        }
-
-        body.mode-expert {
-            font-size: 14px;
-        }
-
-        /* Utility Classes */
+        body { font-family: 'Inter', sans-serif; margin: 0; padding: 0; background-color: var(--bg-color); color: var(--text-color); line-height: 1.6; }
+        .container { max-width: 720px; margin: 0 auto; padding: 0 16px; }
+        header { position: sticky; top: 0; background: var(--navy); color: var(--white); padding: 12px 0; z-index: 1000; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+        .header-content { display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-weight: 800; font-size: 1.2rem; color: var(--primary); margin: 0; }
+        .controls { display: flex; gap: 12px; align-items: center; }
+        select, button { background: rgba(255,255,255,0.1); color: var(--white); border: 1px solid rgba(255,255,255,0.2); padding: 8px 12px; border-radius: 8px; font-family: inherit; font-size: 0.9rem; cursor: pointer; transition: var(--transition); }
+        select option { background: var(--navy); color: var(--white); }
+        button:hover, select:hover { background: rgba(255,255,255,0.2); }
+        .voice-btn { background: none; border: none; color: var(--primary); font-size: 1.2rem; cursor: pointer; padding: 8px; border-radius: 50%; }
+        .voice-btn:hover { background: rgba(0,0,0,0.05); }
+        .impact-statement { background: linear-gradient(135deg, var(--primary) 0%, var(--white) 50%, var(--secondary) 100%); padding: 40px 20px; text-align: center; border-radius: 12px; margin: 24px 0; color: var(--navy); position: relative; overflow: hidden; }
+        .impact-statement::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(255,255,255,0.85); z-index: 1; }
+        .impact-content { position: relative; z-index: 2; }
+        .impact-content h1 { font-size: 2rem; margin-bottom: 16px; }
+        section { margin-bottom: 48px; background: var(--card-bg); border-radius: 16px; padding: 24px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
+        h2 { display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid var(--bg-color); padding-bottom: 12px; margin-top: 0; color: var(--secondary); }
+        body.mode-basic { font-size: 18px; }
+        body.mode-basic button, body.mode-basic .card { min-height: 52px; }
+        body.mode-informed { font-size: 16px; }
+        body.mode-expert { font-size: 14px; }
         .hidden { display: none !important; }
         .flex { display: flex; }
-        .grid { display: grid; }
         .gap-4 { gap: 16px; }
         .mt-4 { margin-top: 16px; }
-        .mb-4 { margin-bottom: 16px; }
-
-        /* Election Steps (Section 1) */
-        .step-list {
-            list-style: none;
-            padding: 0;
-        }
-
-        .step-item {
-            display: flex;
-            align-items: flex-start;
-            gap: 16px;
-            margin-bottom: 20px;
-            padding: 16px;
-            background: var(--bg-color);
-            border-radius: 12px;
-            transition: var(--transition);
-            cursor: pointer;
-        }
-
-        .step-item:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-        }
-
-        .step-icon {
-            font-size: 2rem;
-            background: var(--white);
-            width: 48px;
-            height: 48px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 50%;
-            flex-shrink: 0;
-        }
-
+        .step-list { list-style: none; padding: 0; }
+        .step-item { display: flex; align-items: flex-start; gap: 16px; margin-bottom: 20px; padding: 16px; background: var(--bg-color); border-radius: 12px; transition: var(--transition); cursor: pointer; }
+        .step-item:hover { transform: translateY(-2px); box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
+        .step-icon { font-size: 2rem; background: var(--white); width: 48px; height: 48px; display: flex; align-items: center; justify-content: center; border-radius: 50%; flex-shrink: 0; }
         .step-content { flex-grow: 1; }
         .step-title { font-weight: 600; margin-bottom: 4px; }
-        
-        /* Candidate Cards (Section 2) */
-        .candidate-selector {
-            width: 100%;
-            padding: 12px;
-            margin-bottom: 24px;
-            background: var(--white);
-            color: var(--navy);
-            border: 2px solid var(--primary);
-            transition: border-color 0.3s ease;
-        }
-
-        .candidate-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
-        }
-
-        @media (max-width: 600px) {
-            .candidate-grid { grid-template-columns: 1fr; }
-        }
-
-        .candidate-card {
-            border: 1px solid #ddd;
-            border-radius: 12px;
-            padding: 16px;
-            text-align: center;
-            position: relative;
-        }
-
-        .avatar {
-            width: 64px;
-            height: 64px;
-            background: var(--navy);
-            color: var(--white);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-            font-weight: bold;
-            margin: 0 auto 12px;
-        }
-
-        .record-indicator {
-            width: 20px;
-            height: 20px;
-            border-radius: 50%;
-            display: inline-block;
-            margin-top: 8px;
-        }
+        .candidate-selector { width: 100%; padding: 12px; margin-bottom: 24px; background: var(--white); color: var(--navy); border: 2px solid var(--primary); }
+        .candidate-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+        @media (max-width: 600px) { .candidate-grid { grid-template-columns: 1fr; } }
+        .candidate-card { border: 1px solid #ddd; border-radius: 12px; padding: 16px; text-align: center; }
+        .avatar { width: 64px; height: 64px; background: var(--navy); color: var(--white); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: bold; margin: 0 auto 12px; }
+        .record-indicator { width: 20px; height: 20px; border-radius: 50%; display: inline-block; margin-top: 8px; }
         .record-green { background: var(--secondary); }
         .record-amber { background: var(--amber); }
         .record-red { background: var(--red); }
-
-        .trust-bar-container {
-            width: 100%;
-            height: 8px;
-            background: #eee;
-            border-radius: 4px;
-            margin-top: 12px;
-            overflow: hidden;
-        }
-        .trust-bar {
-            height: 100%;
-            background: var(--secondary);
-            transition: background 0.3s ease;
-        }
-
-        .pill {
-            display: inline-block;
-            padding: 4px 8px;
-            border-radius: 12px;
-            font-size: 0.8em;
-            margin: 4px 2px;
-            color: var(--white);
-        }
-
-        /* Eligibility (Section 3) */
-        .quiz-question {
-            margin-bottom: 24px;
-        }
-        .quiz-options {
-            display: flex;
-            gap: 12px;
-        }
-        .btn-option {
-            flex: 1;
-            padding: 12px;
-            background: var(--bg-color);
-            color: var(--navy);
-            border: 1px solid #ddd;
-            border-radius: 8px;
-        }
-        .btn-option.selected {
-            background: var(--navy);
-            color: var(--white);
-        }
-        .result-card {
-            margin-top: 24px;
-            padding: 20px;
-            border-radius: 12px;
-            text-align: center;
-        }
-        .result-success { background: rgba(0, 0, 0, 0.05); border: 1px solid var(--secondary); }
-        .result-steps { background: rgba(0, 0, 0, 0.05); border: 1px solid var(--primary); text-align: left; }
-
-        /* Myths (Section 4) */
-        .myth-card {
-            perspective: 1000px;
-            margin-bottom: 16px;
-            cursor: pointer;
-        }
-        .myth-inner {
-            position: relative;
-            width: 100%;
-            transition: transform 0.6s;
-            transform-style: preserve-3d;
-        }
-        .myth-card.flipped .myth-inner {
-            transform: rotateY(180deg);
-        }
-        .myth-front, .myth-back {
-            width: 100%;
-            backface-visibility: hidden;
-            padding: 20px;
-            border-radius: 12px;
-            box-sizing: border-box;
-        }
-        .myth-front {
-            background: #ffebee;
-            color: var(--red);
-            border: 1px solid var(--red);
-        }
-        .myth-back {
-            background: #e8f5e9;
-            color: var(--secondary);
-            border: 1px solid var(--secondary);
-            transform: rotateY(180deg);
-            position: absolute;
-            top: 0;
-            left: 0;
-            height: 100%;
-        }
-
-        /* Rights & Generator (Section 5) */
-        .generator-form {
-            background: var(--bg-color);
-            padding: 16px;
-            border-radius: 8px;
-            margin-top: 16px;
-        }
-        input[type="text"] {
-            width: 100%;
-            padding: 12px;
-            margin-bottom: 12px;
-            border: 1px solid #ccc;
-            border-radius: 6px;
-            box-sizing: border-box;
-        }
-        .primary-btn {
-            background: var(--primary);
-            color: var(--white);
-            border: none;
-            padding: 12px 24px;
-            font-weight: bold;
-            border-radius: 8px;
-            transition: background 0.3s ease;
-            cursor: pointer;
-        }
-        textarea {
-            width: 100%;
-            height: 150px;
-            padding: 12px;
-            box-sizing: border-box;
-            border-radius: 6px;
-            border: 1px solid #ccc;
-            margin-top: 12px;
-        }
-
-        /* Pledge (Section 6) */
-        .pledge-card {
-            background: linear-gradient(to right, var(--primary), var(--white), var(--secondary));
-            padding: 30px;
-            border-radius: 16px;
-            text-align: center;
-            color: var(--navy);
-            font-weight: bold;
-            font-size: 1.2rem;
-            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
-            transition: background 0.5s ease;
-        }
-        
-        /* Modals/Overlays */
-        #mode-modal {
-            position: fixed;
-            top: 0; left: 0; right: 0; bottom: 0;
-            background: rgba(10, 22, 40, 0.95);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            z-index: 2000;
-        }
-        .mode-cards {
-            display: flex;
-            gap: 20px;
-            max-width: 900px;
-            padding: 20px;
-        }
-        @media (max-width: 768px) {
-            .mode-cards { flex-direction: column; }
-        }
-        .mode-card {
-            background: var(--white);
-            padding: 30px;
-            border-radius: 16px;
-            text-align: center;
-            cursor: pointer;
-            flex: 1;
-            transition: transform 0.3s;
-        }
+        .trust-bar-container { width: 100%; height: 8px; background: #eee; border-radius: 4px; margin-top: 12px; overflow: hidden; }
+        .trust-bar { height: 100%; background: var(--secondary); }
+        .pill { display: inline-block; padding: 4px 8px; border-radius: 12px; font-size: 0.8em; margin: 4px 2px; color: var(--white); }
+        .quiz-question { margin-bottom: 24px; }
+        .quiz-options { display: flex; gap: 12px; }
+        .btn-option { flex: 1; padding: 12px; background: var(--bg-color); color: var(--navy); border: 1px solid #ddd; border-radius: 8px; }
+        .btn-option.selected { background: var(--navy); color: var(--white); }
+        .result-card { margin-top: 24px; padding: 20px; border-radius: 12px; text-align: center; }
+        .result-success { background: rgba(0,0,0,0.05); border: 1px solid var(--secondary); }
+        .result-steps { background: rgba(0,0,0,0.05); border: 1px solid var(--primary); text-align: left; }
+        .myth-card { perspective: 1000px; margin-bottom: 16px; cursor: pointer; }
+        .myth-inner { position: relative; width: 100%; transition: transform 0.6s; transform-style: preserve-3d; }
+        .myth-card.flipped .myth-inner { transform: rotateY(180deg); }
+        .myth-front, .myth-back { width: 100%; backface-visibility: hidden; padding: 20px; border-radius: 12px; box-sizing: border-box; }
+        .myth-front { background: #ffebee; color: var(--red); border: 1px solid var(--red); }
+        .myth-back { background: #e8f5e9; color: var(--secondary); border: 1px solid var(--secondary); transform: rotateY(180deg); position: absolute; top: 0; left: 0; height: 100%; }
+        .generator-form { background: var(--bg-color); padding: 16px; border-radius: 8px; margin-top: 16px; }
+        input[type="text"] { width: 100%; padding: 12px; margin-bottom: 12px; border: 1px solid #ccc; border-radius: 6px; box-sizing: border-box; }
+        .primary-btn { background: var(--primary); color: var(--white); border: none; padding: 12px 24px; font-weight: bold; border-radius: 8px; cursor: pointer; }
+        textarea { width: 100%; height: 150px; padding: 12px; box-sizing: border-box; border-radius: 6px; border: 1px solid #ccc; margin-top: 12px; }
+        .pledge-card { background: linear-gradient(to right, var(--primary), var(--white), var(--secondary)); padding: 30px; border-radius: 16px; text-align: center; color: var(--navy); font-weight: bold; font-size: 1.2rem; box-shadow: 0 8px 16px rgba(0,0,0,0.1); }
+        #mode-modal { position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(10,22,40,0.95); display: flex; align-items: center; justify-content: center; z-index: 2000; }
+        .mode-cards { display: flex; gap: 20px; max-width: 900px; padding: 20px; }
+        @media (max-width: 768px) { .mode-cards { flex-direction: column; } }
+        .mode-card { background: var(--white); padding: 30px; border-radius: 16px; text-align: center; cursor: pointer; flex: 1; transition: transform 0.3s; }
         .mode-card:hover { transform: scale(1.05); }
         .mode-card h3 { color: var(--navy); margin-top: 0; }
-        
+
+        /* ===== GEMINI CHAT STYLES ===== */
+        #chat-fab { position: fixed; bottom: 28px; right: 24px; width: 62px; height: 62px; border-radius: 50%; background: linear-gradient(135deg, #FF9933, #046A38); color: white; font-size: 1.6rem; border: none; cursor: pointer; box-shadow: 0 4px 20px rgba(0,0,0,0.3); z-index: 1500; display: flex; align-items: center; justify-content: center; transition: transform 0.2s ease; }
+        #chat-fab:hover { transform: scale(1.1); }
+        #chat-panel { position: fixed; bottom: 104px; right: 24px; width: 340px; height: 500px; background: white; border-radius: 16px; box-shadow: 0 8px 32px rgba(0,0,0,0.2); z-index: 1499; display: flex; flex-direction: column; overflow: hidden; font-family: 'Inter', sans-serif; }
+        #chat-panel.hidden { display: none !important; }
+        #chat-header { background: #0a1628; color: white; padding: 14px 16px; display: flex; justify-content: space-between; align-items: center; flex-shrink: 0; }
+        #chat-header span { font-weight: 700; font-size: 0.95rem; }
+        #chat-close { background: none; border: none; color: white; font-size: 1.2rem; cursor: pointer; padding: 0 4px; }
+        #chat-messages { flex: 1; overflow-y: auto; padding: 16px; display: flex; flex-direction: column; gap: 12px; }
+        .chat-bubble { max-width: 85%; padding: 10px 14px; border-radius: 14px; font-size: 0.88rem; line-height: 1.5; }
+        .bubble-ai { background: #f0f0f0; color: #0a1628; align-self: flex-start; border-bottom-left-radius: 4px; }
+        .bubble-user { background: #FF9933; color: white; align-self: flex-end; border-bottom-right-radius: 4px; }
+        .bubble-thinking { background: #f0f0f0; color: #888; align-self: flex-start; font-style: italic; }
+        .speak-btn { background: none; border: none; cursor: pointer; font-size: 0.82rem; padding: 2px 0; margin-top: 4px; display: block; color: #046A38; }
+        #chat-input-area { display: flex; gap: 8px; padding: 12px; border-top: 1px solid #eee; flex-shrink: 0; }
+        #chat-input { flex: 1; padding: 10px 12px; border: 1px solid #ddd; border-radius: 8px; font-size: 0.9rem; font-family: inherit; outline: none; color: #0a1628; }
+        #chat-send { background: #FF9933; color: white; border: none; padding: 10px 14px; border-radius: 8px; font-weight: bold; cursor: pointer; }
+        #chat-send:hover { background: #e08020; }
+        .chat-welcome { background: linear-gradient(135deg, #fff8f0, #f0fff4); border: 1px solid #FF9933; border-radius: 12px; padding: 12px; font-size: 0.85rem; color: #0a1628; text-align: center; }
+        @media (max-width: 400px) { #chat-panel { width: calc(100vw - 32px); right: 16px; } }
     </style>
 </head>
 <body class="mode-basic">
 
-    <!-- Mode Selection Modal (First Screen) -->
     <div id="mode-modal">
         <div class="mode-cards">
             <div class="mode-card" onclick="setMode('basic')">
@@ -461,9 +127,7 @@
         </div>
     </div>
 
-    <!-- Main Content wrapper (hidden until mode selected) -->
     <div id="app-content" class="hidden">
-        
         <header>
             <div class="container header-content">
                 <h1 class="logo">Jan Awaaz</h1>
@@ -490,28 +154,18 @@
         <div class="container">
             <div class="impact-statement">
                 <div class="impact-content">
-                    <h1 id="t-impact-title">800 million Indians are eligible to vote..</h1>
-                    <p id="t-impact-desc"> Most have never had a civic tool built for them. Jan Awaaz changes that: one app that speaks your language, shows you your candidate's broken promises, and gives you a complaint letter when your rights are violated. Built for the voter nobody builds for</p>
+                    <h1 id="t-impact-title">800 million Indians are eligible to vote.</h1>
+                    <p id="t-impact-desc">Most have never had a civic tool built for them. Jan Awaaz changes that — one app that speaks your language, shows you your candidate's broken promises, and gives you a complaint letter when your rights are violated. Built for the voter nobody builds for.</p>
                 </div>
             </div>
 
-            <!-- Section 1: Bharat Ka Chunav -->
             <section id="sec-1">
-                <h2>
-                    <span id="t-sec1-title">Bharat Ka Chunav</span>
-                    <button class="voice-btn" onclick="speakSection('sec-1')">🔊</button>
-                </h2>
-                <ul class="step-list" id="election-steps-container">
-                    <!-- Populated by JS based on mode -->
-                </ul>
+                <h2><span id="t-sec1-title">Bharat Ka Chunav</span><button class="voice-btn" onclick="speakSection('sec-1')">🔊</button></h2>
+                <ul class="step-list" id="election-steps-container"></ul>
             </section>
 
-            <!-- Section 2: Candidate Report Card -->
             <section id="sec-2">
-                <h2>
-                    <span id="t-sec2-title">Candidate Report Card</span>
-                    <button class="voice-btn" onclick="speakSection('sec-2')">🔊</button>
-                </h2>
+                <h2><span id="t-sec2-title">Candidate Report Card</span><button class="voice-btn" onclick="speakSection('sec-2')">🔊</button></h2>
                 <select class="candidate-selector" id="constituency-selector" onchange="renderCandidates()">
                     <option value="delhi_north">Delhi North</option>
                     <option value="mumbai_south">Mumbai South</option>
@@ -519,45 +173,24 @@
                     <option value="kolkata_east">Kolkata East</option>
                     <option value="bangalore_west">Bangalore West</option>
                 </select>
-                <div class="candidate-grid" id="candidate-grid-container">
-                    <!-- Populated by JS -->
-                </div>
+                <div class="candidate-grid" id="candidate-grid-container"></div>
             </section>
 
-            <!-- Section 3: Eligibility -->
             <section id="sec-3">
-                <h2>
-                    <span id="t-sec3-title">Kya Main Vote De Sakta Hoon?</span>
-                    <button class="voice-btn" onclick="speakSection('sec-3')">🔊</button>
-                </h2>
-                <div id="quiz-container">
-                    <!-- Questions populated by JS -->
-                </div>
+                <h2><span id="t-sec3-title">Kya Main Vote De Sakta Hoon?</span><button class="voice-btn" onclick="speakSection('sec-3')">🔊</button></h2>
+                <div id="quiz-container"></div>
                 <div id="quiz-result" class="hidden"></div>
             </section>
 
-            <!-- Section 4: Myths -->
             <section id="sec-4">
-                <h2>
-                    <span id="t-sec4-title">Sacch Ya Jhooth</span>
-                    <button class="voice-btn" onclick="speakSection('sec-4')">🔊</button>
-                </h2>
-                <div id="myths-container">
-                    <!-- Myths populated by JS -->
-                </div>
-                <div id="myth-score" class="hidden mt-4 text-center font-bold"></div>
+                <h2><span id="t-sec4-title">Sacch Ya Jhooth</span><button class="voice-btn" onclick="speakSection('sec-4')">🔊</button></h2>
+                <div id="myths-container"></div>
+                <div id="myth-score" class="hidden mt-4"></div>
             </section>
 
-            <!-- Section 5: Rights -->
             <section id="sec-5">
-                <h2>
-                    <span id="t-sec5-title">Aapke Adhikar</span>
-                    <button class="voice-btn" onclick="speakSection('sec-5')">🔊</button>
-                </h2>
-                <ul class="step-list" id="rights-container">
-                    <!-- Populated by JS -->
-                </ul>
-                
+                <h2><span id="t-sec5-title">Aapke Adhikar</span><button class="voice-btn" onclick="speakSection('sec-5')">🔊</button></h2>
+                <ul class="step-list" id="rights-container"></ul>
                 <div id="complaint-generator" class="hidden generator-form">
                     <h3 id="t-gen-title">Complaint Letter Generator</h3>
                     <input type="text" id="gen-name" placeholder="Your Name">
@@ -567,180 +200,115 @@
                 </div>
             </section>
 
-            <!-- Section 6: Pledge (Hidden initially) -->
             <section id="sec-6" class="hidden">
-                <h2>
-                    <span id="t-sec6-title">Mera Vaada</span>
-                </h2>
+                <h2><span id="t-sec6-title">Mera Vaada</span></h2>
                 <div class="generator-form">
                     <input type="text" id="pledge-name" placeholder="Enter your name">
                     <button class="primary-btn" onclick="generatePledge()" id="t-pledge-btn">Create Pledge</button>
                 </div>
                 <div id="pledge-output" class="hidden mt-4">
-                    <div class="pledge-card" id="pledge-card-ui">
-                        "I, <span id="p-name"></span>, pledge to vote and encourage 5 people around me to vote."
-                    </div>
+                    <div class="pledge-card" id="pledge-card-ui">"I, <span id="p-name"></span>, pledge to vote and encourage 5 people around me to vote."</div>
                     <div class="flex gap-4 mt-4">
                         <button class="primary-btn" onclick="copyPledge()" id="t-copy-btn">Copy Text</button>
                     </div>
                 </div>
             </section>
+        </div>
+    </div>
 
+    <!-- GEMINI CHAT UI -->
+    <button id="chat-fab" onclick="toggleChat()" title="Ask Jan Awaaz AI">🤖</button>
+    <div id="chat-panel" class="hidden">
+        <div id="chat-header">
+            <span>🇮🇳 Jan Awaaz AI</span>
+            <button id="chat-close" onclick="toggleChat()">✕</button>
+        </div>
+        <div id="chat-messages">
+            <div class="chat-welcome">
+                Namaste! 🙏 Ask me anything about voting, your rights, or how elections work.<br><br>
+                आप हिंदी, தமிழ், తెలుగు या किसी भी भाषा में पूछ सकते हैं 🇮🇳
+            </div>
+        </div>
+        <div id="chat-input-area">
+            <input type="text" id="chat-input" placeholder="Ask in any language..." onkeydown="if(event.key==='Enter') sendChat()">
+            <button id="chat-send" onclick="sendChat()">Send</button>
         </div>
     </div>
 
     <script>
-        // --- State ---
-        let currentMode = 'basic'; // basic, informed, expert
+        let currentMode = 'basic';
         let currentLanguage = 'en';
         let mythScore = { total: 0, wrong: 0 };
-        
-        // --- Content Dictionary ---
+
         const content = {
             en: {
                 name: "English",
                 ui: {
-                    switchMode: "Switch Mode",
-                    comingSoon: "",
+                    switchMode: "Switch Mode", comingSoon: "",
                     impactTitle: "800 million Indians are eligible to vote.",
-                    impactDesc: "Most have never had a civic tool built for them. Jan Awaaz changes that — one app that speaks your language, shows you your candidate's broken promises, and gives you a complaint letter when your rights are violated. Built for the voter nobody builds for.",
-                    sec1Title: "How Indian Elections Work",
-                    sec2Title: "Candidate Report Card",
-                    sec3Title: "Am I Ready to Vote?",
-                    sec4Title: "Myth Crusher",
-                    sec5Title: "Your Rights at the Booth",
-                    sec6Title: "Voter Pledge",
-                    genTitle: "Complaint Letter Generator",
-                    genBtn: "Generate Letter",
-                    pledgeBtn: "Create Pledge",
-                    copyBtn: "Copy Text",
+                    impactDesc: "Most have never had a civic tool built for them. Jan Awaaz changes that — one app that speaks your language, shows you your candidate's broken promises, and gives you a complaint letter when your rights are violated.",
+                    sec1Title: "How Indian Elections Work", sec2Title: "Candidate Report Card",
+                    sec3Title: "Am I Ready to Vote?", sec4Title: "Myth Crusher",
+                    sec5Title: "Your Rights at the Booth", sec6Title: "Voter Pledge",
+                    genTitle: "Complaint Letter Generator", genBtn: "Generate Letter",
+                    pledgeBtn: "Create Pledge", copyBtn: "Copy Text",
                     yes: "Yes", no: "No", notSure: "Not Sure",
                     thoughtTrue: "I Thought This Was True", knewFalse: "I Already Knew This Was False",
                     mythScoreText: "You reviewed all myths. You were confidently wrong about {n} of them."
                 },
                 modes: {
-                    basic: { title: "Pehli Baar", desc: "First Time Voter. Simple steps, large text, easy actions." },
-                    informed: { title: "Jagruk Nagrik", desc: "Informed Citizen. Detailed stats, history, and context." },
-                    expert: { title: "Visheshagya", desc: "Expert / Official. Legal citations, deep data, generators." }
+                    basic: { title: "Pehli Baar", desc: "First Time Voter." },
+                    informed: { title: "Jagruk Nagrik", desc: "Informed Citizen." },
+                    expert: { title: "Visheshagya", desc: "Expert / Official." }
                 },
                 electionSteps: [
-                    {
-                        icon: "📢",
-                        basic: "Election Announced.",
-                        informed: "Election Announced. ECI declares dates and Model Code of Conduct begins.",
-                        expert: "Election Announced. Art 324 invoked. MCC restricts government announcements. Challenge window opens."
-                    },
-                    {
-                        icon: "📝",
-                        basic: "Register to Vote.",
-                        informed: "Register to Vote. Fill Form 6 via Voter Helpline App before the deadline.",
-                        expert: "Register to Vote. RoPA 1950 Sec 19. Submit Form 6. BLO verification within 7 days."
-                    },
-                    {
-                        icon: "💳",
-                        basic: "Get EPIC Card.",
-                        informed: "Get EPIC Card. Download e-EPIC online or wait for post.",
-                        expert: "Get EPIC Card. ECI directive 1993. Serves as primary identity document."
-                    },
-                    {
-                        icon: "🙋",
-                        basic: "Candidates Nominated.",
-                        informed: "Candidates Nominated. Affidavits showing assets and crimes become public.",
-                        expert: "Candidates Nominated. Form 26 filed under RoPA 1951 Sec 33. Returning Officer scrutiny phase."
-                    },
-                    {
-                        icon: "🎤",
-                        basic: "Campaign Period.",
-                        informed: "Campaign Period. Rallies happen. Ends 48 hours before voting.",
-                        expert: "Campaign Period. Sec 126 RoPA 1951 enforces 48-hour silence period before poll opens."
-                    },
-                    {
-                        icon: "🗳️",
-                        basic: "Voting Day.",
-                        informed: "Voting Day. Go to booth, press EVM button, check VVPAT slip.",
-                        expert: "Voting Day. Conduct of Election Rules 1961. Presiding officer manages EVM/VVPAT protocol."
-                    },
-                    {
-                        icon: "📊",
-                        basic: "Results Declared.",
-                        informed: "Results Declared. Votes counted under ECI supervision.",
-                        expert: "Results Declared. Returning Officer issues Form 21C. Election petition window: 45 days."
-                    }
+                    { icon: "📢", basic: "Election Announced.", informed: "Election Announced. ECI declares dates and Model Code of Conduct begins.", expert: "Election Announced. Art 324 invoked. MCC restricts government announcements." },
+                    { icon: "📝", basic: "Register to Vote.", informed: "Register to Vote. Fill Form 6 via Voter Helpline App before the deadline.", expert: "Register to Vote. RoPA 1950 Sec 19. Submit Form 6. BLO verification within 7 days." },
+                    { icon: "💳", basic: "Get EPIC Card.", informed: "Get EPIC Card. Download e-EPIC online or wait for post.", expert: "Get EPIC Card. ECI directive 1993. Serves as primary identity document." },
+                    { icon: "🙋", basic: "Candidates Nominated.", informed: "Candidates Nominated. Affidavits showing assets and crimes become public.", expert: "Candidates Nominated. Form 26 filed under RoPA 1951 Sec 33." },
+                    { icon: "🎤", basic: "Campaign Period.", informed: "Campaign Period. Rallies happen. Ends 48 hours before voting.", expert: "Campaign Period. Sec 126 RoPA 1951 enforces 48-hour silence period." },
+                    { icon: "🗳️", basic: "Voting Day.", informed: "Voting Day. Go to booth, press EVM button, check VVPAT slip.", expert: "Voting Day. Conduct of Election Rules 1961. Presiding officer manages EVM/VVPAT." },
+                    { icon: "📊", basic: "Results Declared.", informed: "Results Declared. Votes counted under ECI supervision.", expert: "Results Declared. Returning Officer issues Form 21C. Election petition window: 45 days." }
                 ],
                 rights: [
-                    {
-                        basic: "Secret Ballot.",
-                        informed: "Secret Ballot. Nobody can force you to reveal who you voted for.",
-                        expert: "Secret Ballot. RoPA 1951 Sec 128. Violation is a punishable offense."
-                    },
-                    {
-                        basic: "NOTA Option.",
-                        informed: "NOTA Option. You can reject all candidates by pressing the last button.",
-                        expert: "NOTA Option. SC Judgment 2013 (PUCL vs UoI). Rule 49O of Conduct of Election Rules."
-                    },
-                    {
-                        basic: "Replacement Ballot.",
-                        informed: "Replacement Ballot. If EVM malfunctions, you have the right to a functional machine.",
-                        expert: "Replacement Ballot. Conduct of Election Rules, Rule 49MA for VVPAT discrepancy."
-                    },
-                    {
-                        basic: "Assistance if Disabled.",
-                        informed: "Assistance if Disabled. You can bring a companion or ask staff for help.",
-                        expert: "Assistance if Disabled. Rule 49N. Form 14A must be filled by companion."
-                    }
+                    { basic: "Secret Ballot.", informed: "Secret Ballot. Nobody can force you to reveal who you voted for.", expert: "Secret Ballot. RoPA 1951 Sec 128. Violation is a punishable offense." },
+                    { basic: "NOTA Option.", informed: "NOTA Option. You can reject all candidates by pressing the last button.", expert: "NOTA Option. SC Judgment 2013 (PUCL vs UoI). Rule 49O." },
+                    { basic: "Replacement Ballot.", informed: "Replacement Ballot. If EVM malfunctions, you have the right to a functional machine.", expert: "Replacement Ballot. Conduct of Election Rules, Rule 49MA." },
+                    { basic: "Assistance if Disabled.", informed: "Assistance if Disabled. You can bring a companion or ask staff for help.", expert: "Assistance if Disabled. Rule 49N. Form 14A must be filled by companion." }
                 ],
                 myths: [
-                    { q: "My vote does not matter.", a: "Basic: Every vote counts.", a_inf: "Many elections are won by margins of less than 100 votes.", a_exp: "Example: CP Joshi lost by 1 vote in 2008. Ref: ECI Statistical Report." },
-                    { q: "Voting takes the whole day.", a: "Basic: It usually takes less than 30 minutes.", a_inf: "ECI norms mandate maximum 1200-1500 voters per booth to ensure quick voting.", a_exp: "ECI Manual on Polling Stations Chapter 2. Queue management is mandatory." },
-                    { q: "I need my caste certificate to vote.", a: "Basic: False. You just need ID.", a_inf: "Only EPIC card or 11 other approved IDs like Aadhaar/PAN are needed.", a_exp: "ECI Order under Rule 28 of Registration of Electors Rules 1960." },
-                    { q: "I cannot vote if I forgot my EPIC card.", a: "Basic: False. Use Aadhaar, PAN, or Passport.", a_inf: "As long as your name is on the voter list, alternative IDs work.", a_exp: "ECI Photo Voter Slip is no longer standalone ID. Must pair with specified documents." },
-                    { q: "Rich candidates always win.", a: "Basic: False. Voters decide.", a_inf: "Data shows many self-funded candidates defeat wealthy opponents.", a_exp: "ADR Report 2019: 15% of winners had assets below average threshold." },
-                    { q: "NOTA means my vote is wasted.", a: "Basic: False. It registers your protest.", a_inf: "NOTA forces parties to field better candidates if NOTA votes are high.", a_exp: "NOTA is aggregated. High NOTA indicates deep voter dissatisfaction (PUCL 2013)." }
+                    { q: "My vote does not matter.", a: "Every vote counts.", a_inf: "Many elections are won by margins of less than 100 votes.", a_exp: "Example: CP Joshi lost by 1 vote in 2008. Ref: ECI Statistical Report." },
+                    { q: "Voting takes the whole day.", a: "It usually takes less than 30 minutes.", a_inf: "ECI norms mandate maximum 1200-1500 voters per booth.", a_exp: "ECI Manual on Polling Stations Chapter 2." },
+                    { q: "I need my caste certificate to vote.", a: "False. You just need ID.", a_inf: "Only EPIC card or 11 other approved IDs like Aadhaar/PAN are needed.", a_exp: "ECI Order under Rule 28 of Registration of Electors Rules 1960." },
+                    { q: "I cannot vote if I forgot my EPIC card.", a: "False. Use Aadhaar, PAN, or Passport.", a_inf: "As long as your name is on the voter list, alternative IDs work.", a_exp: "ECI Photo Voter Slip must pair with specified documents." },
+                    { q: "Rich candidates always win.", a: "False. Voters decide.", a_inf: "Data shows many self-funded candidates defeat wealthy opponents.", a_exp: "ADR Report 2019: 15% of winners had assets below average threshold." },
+                    { q: "NOTA means my vote is wasted.", a: "False. It registers your protest.", a_inf: "NOTA forces parties to field better candidates if NOTA votes are high.", a_exp: "NOTA is aggregated. High NOTA indicates deep voter dissatisfaction (PUCL 2013)." }
                 ],
-                quiz: [
-                    "Are you 18 or older?",
-                    "Are you an Indian citizen?",
-                    "Do you have an EPIC card or Aadhaar?",
-                    "Is your name on the voter list?"
-                ],
+                quiz: ["Are you 18 or older?", "Are you an Indian citizen?", "Do you have an EPIC card or Aadhaar?", "Is your name on the voter list?"],
                 quizResult: {
-                    success: {
-                        basic: "You Are Ready to Vote! ✅",
-                        informed: "You Are Ready to Vote! ✅ Check voters.eci.gov.in to confirm your polling booth.",
-                        expert: "You Are Ready to Vote! ✅ Ensure you carry your ID. If turned away, cite RoPA 1950 Sec 62."
-                    },
-                    fail: {
-                        basic: "1. Register online. 2. Get ID. 3. Check list.",
-                        informed: "1. Visit nvsp.in to register. 2. Track status. 3. ECI helpline is 1950.",
-                        expert: "1. File Form 6. 2. Track via ERONet. 3. Use RTI template provided below if delayed."
-                    }
+                    success: { basic: "You Are Ready to Vote! ✅", informed: "You Are Ready to Vote! ✅ Check voters.eci.gov.in to confirm your polling booth.", expert: "You Are Ready to Vote! ✅ Ensure you carry your ID. If turned away, cite RoPA 1950 Sec 62." },
+                    fail: { basic: "1. Register online. 2. Get ID. 3. Check list.", informed: "1. Visit nvsp.in to register. 2. Track status. 3. ECI helpline is 1950.", expert: "1. File Form 6. 2. Track via ERONet. 3. Use RTI template if delayed." }
                 }
             },
             hi: {
                 name: "हिंदी",
                 ui: {
-                    switchMode: "मोड बदलें",
-                    comingSoon: "",
+                    switchMode: "मोड बदलें", comingSoon: "",
                     impactTitle: "2024 में 70 करोड़ भारतीयों ने मतदान किया।",
-                    impactDesc: "जन आवाज़ उस मतदाता के लिए है जो हिंदी बोलता है, जो जानना चाहता है कि क्या उसके उम्मीदवार ने वादे पूरे किए, और उस अधिकारी के लिए जिसे स्पष्ट चुनाव डेटा चाहिए। एक ऐप। तीन रास्ते। कोई बाधा नहीं।",
-                    sec1Title: "भारत का चुनाव कैसे काम करता है",
-                    sec2Title: "उम्मीदवार रिपोर्ट कार्ड",
-                    sec3Title: "क्या मैं वोट दे सकता हूँ?",
-                    sec4Title: "सच या झूठ",
-                    sec5Title: "बूथ पर आपके अधिकार",
-                    sec6Title: "मेरा वादा",
-                    genTitle: "शिकायत पत्र जनरेटर",
-                    genBtn: "पत्र बनाएँ",
-                    pledgeBtn: "वादा बनाएँ",
-                    copyBtn: "टेक्स्ट कॉपी करें",
+                    impactDesc: "जन आवाज़ उस मतदाता के लिए है जो हिंदी बोलता है। एक ऐप। तीन रास्ते। कोई बाधा नहीं।",
+                    sec1Title: "भारत का चुनाव कैसे काम करता है", sec2Title: "उम्मीदवार रिपोर्ट कार्ड",
+                    sec3Title: "क्या मैं वोट दे सकता हूँ?", sec4Title: "सच या झूठ",
+                    sec5Title: "बूथ पर आपके अधिकार", sec6Title: "मेरा वादा",
+                    genTitle: "शिकायत पत्र जनरेटर", genBtn: "पत्र बनाएँ",
+                    pledgeBtn: "वादा बनाएँ", copyBtn: "टेक्स्ट कॉपी करें",
                     yes: "हाँ", no: "नहीं", notSure: "पता नहीं",
                     thoughtTrue: "मुझे लगा यह सच है", knewFalse: "मुझे पता था यह झूठ है",
                     mythScoreText: "आपने सभी तथ्य देखे। आप {n} के बारे में गलत थे।"
                 },
                 modes: {
-                    basic: { title: "पहली बार", desc: "पहली बार मतदाता। सरल कदम, बड़े अक्षर।" },
-                    informed: { title: "जागरूक नागरिक", desc: "जागरूक नागरिक। विस्तृत आँकड़े और इतिहास।" },
-                    expert: { title: "विशेषज्ञ", desc: "विशेषज्ञ/अधिकारी। कानूनी जानकारी।" }
+                    basic: { title: "पहली बार", desc: "पहली बार मतदाता।" },
+                    informed: { title: "जागरूक नागरिक", desc: "जागरूक नागरिक।" },
+                    expert: { title: "विशेषज्ञ", desc: "विशेषज्ञ/अधिकारी।" }
                 },
                 electionSteps: [
                     { icon: "📢", basic: "चुनाव की घोषणा।", informed: "चुनाव की घोषणा। आचार संहिता लागू।", expert: "चुनाव की घोषणा। अनुच्छेद 324 लागू।" },
@@ -758,42 +326,27 @@
                     { basic: "विकलांगों के लिए सहायता।", informed: "विकलांगों के लिए सहायता। आप किसी को साथ ला सकते हैं।", expert: "विकलांगों के लिए सहायता। नियम 49N।" }
                 ],
                 myths: [
-                    { q: "मेरे एक वोट से फर्क नहीं पड़ता।", a: "Basic: हर वोट कीमती है।", a_inf: "कई चुनाव 100 से कम वोटों से जीते जाते हैं।", a_exp: "उदाहरण: सीपी जोशी 2008 में 1 वोट से हारे।" },
-                    { q: "वोट डालने में पूरा दिन लगता है।", a: "Basic: आमतौर पर 30 मिनट से कम लगता है।", a_inf: "ECI ने भीड़ कम करने के लिए नियम बनाए हैं।", a_exp: "ECI मैनुअल अध्याय 2।" },
-                    { q: "वोट देने के लिए जाति प्रमाण पत्र चाहिए।", a: "Basic: झूठ। सिर्फ ID चाहिए।", a_inf: "आधार या वोटर ID काफी है।", a_exp: "ECI आदेश नियम 28।" },
-                    { q: "EPIC कार्ड नहीं है तो वोट नहीं दे सकते।", a: "Basic: झूठ। आधार आदि का उपयोग करें।", a_inf: "अगर नाम लिस्ट में है, तो अन्य ID चलती हैं।", a_exp: "ECI निर्देश।" },
-                    { q: "अमीर उम्मीदवार हमेशा जीतते हैं।", a: "Basic: झूठ। जनता तय करती है।", a_inf: "कई साधारण उम्मीदवार भी जीतते हैं।", a_exp: "ADR रिपोर्ट 2019।" },
-                    { q: "NOTA मतलब वोट बर्बाद।", a: "Basic: झूठ। यह विरोध दर्ज करता है।", a_inf: "यह पार्टियों को बेहतर उम्मीदवार चुनने पर मजबूर करता है।", a_exp: "PUCL 2013।" }
+                    { q: "मेरे एक वोट से फर्क नहीं पड़ता।", a: "हर वोट कीमती है।", a_inf: "कई चुनाव 100 से कम वोटों से जीते जाते हैं।", a_exp: "उदाहरण: सीपी जोशी 2008 में 1 वोट से हारे।" },
+                    { q: "वोट डालने में पूरा दिन लगता है।", a: "आमतौर पर 30 मिनट से कम लगता है।", a_inf: "ECI ने भीड़ कम करने के लिए नियम बनाए हैं।", a_exp: "ECI मैनुअल अध्याय 2।" },
+                    { q: "वोट देने के लिए जाति प्रमाण पत्र चाहिए।", a: "झूठ। सिर्फ ID चाहिए।", a_inf: "आधार या वोटर ID काफी है।", a_exp: "ECI आदेश नियम 28।" },
+                    { q: "EPIC कार्ड नहीं है तो वोट नहीं दे सकते।", a: "झूठ। आधार आदि का उपयोग करें।", a_inf: "अगर नाम लिस्ट में है, तो अन्य ID चलती हैं।", a_exp: "ECI निर्देश।" },
+                    { q: "अमीर उम्मीदवार हमेशा जीतते हैं।", a: "झूठ। जनता तय करती है।", a_inf: "कई साधारण उम्मीदवार भी जीतते हैं।", a_exp: "ADR रिपोर्ट 2019।" },
+                    { q: "NOTA मतलब वोट बर्बाद।", a: "झूठ। यह विरोध दर्ज करता है।", a_inf: "यह पार्टियों को बेहतर उम्मीदवार चुनने पर मजबूर करता है।", a_exp: "PUCL 2013।" }
                 ],
-                quiz: [
-                    "क्या आपकी उम्र 18 या उससे अधिक है?",
-                    "क्या आप भारतीय नागरिक हैं?",
-                    "क्या आपके पास वोटर आईडी या आधार है?",
-                    "क्या आपका नाम वोटर लिस्ट में है?"
-                ],
+                quiz: ["क्या आपकी उम्र 18 या उससे अधिक है?", "क्या आप भारतीय नागरिक हैं?", "क्या आपके पास वोटर आईडी या आधार है?", "क्या आपका नाम वोटर लिस्ट में है?"],
                 quizResult: {
-                    success: {
-                        basic: "आप वोट देने के लिए तैयार हैं! ✅",
-                        informed: "आप वोट देने के लिए तैयार हैं! ✅ अपना बूथ चेक करें।",
-                        expert: "आप वोट देने के लिए तैयार हैं! ✅ RoPA 1950 धारा 62 याद रखें।"
-                    },
-                    fail: {
-                        basic: "1. रजिस्टर करें। 2. ID लें। 3. लिस्ट चेक करें।",
-                        informed: "1. nvsp.in पर जाएं। 2. स्टेटस ट्रैक करें।",
-                        expert: "1. फॉर्म 6 भरें। 2. RTI टेम्पलेट का उपयोग करें।"
-                    }
+                    success: { basic: "आप वोट देने के लिए तैयार हैं! ✅", informed: "आप वोट देने के लिए तैयार हैं! ✅ अपना बूथ चेक करें।", expert: "आप वोट देने के लिए तैयार हैं! ✅ RoPA 1950 धारा 62 याद रखें।" },
+                    fail: { basic: "1. रजिस्टर करें। 2. ID लें। 3. लिस्ट चेक करें।", informed: "1. nvsp.in पर जाएं। 2. स्टेटस ट्रैक करें।", expert: "1. फॉर्म 6 भरें। 2. RTI टेम्पलेट का उपयोग करें।" }
                 }
             }
         };
 
-        // Add stub data for other languages
         const langs = ['ta','te','bn','mr','kn','ml','pa','gu','or','ur'];
         langs.forEach(lang => {
             content[lang] = JSON.parse(JSON.stringify(content.en));
-            content[lang].ui.comingSoon = "[Coming Soon in Language] ";
+            content[lang].ui.comingSoon = "[Coming Soon] ";
         });
 
-        // --- Data ---
         const candidates = {
             delhi_north: [
                 { name: "Rahul Sharma", party: "Party A", promise: "Free Electricity", record: "amber", edu: "B.A.", cases: 0, assets: 45, winMargin: "5%", turnout: 62, promises: ["green", "red", "amber"] },
@@ -817,8 +370,6 @@
             ]
         };
 
-        // --- Core Functions ---
-
         function setMode(mode) {
             currentMode = mode;
             document.body.className = `mode-${mode}`;
@@ -829,92 +380,50 @@
 
         function changeLanguage(lang) {
             currentLanguage = lang;
-            
-            // Dynamic theming based on selected language (simulating regions)
             const root = document.documentElement;
-            if (lang === 'ta' || lang === 'te' || lang === 'kn' || lang === 'ml') {
-                // South Indian subtle theme
-                root.style.setProperty('--primary', '#E84A5F'); // Deep Rose
-                root.style.setProperty('--secondary', '#2A363B'); // Charcoal
-            } else if (lang === 'bn' || lang === 'or') {
-                // East Indian subtle theme
-                root.style.setProperty('--primary', '#F8B195'); // Peach
-                root.style.setProperty('--secondary', '#355C7D'); // Ocean Blue
-            } else if (lang === 'pa' || lang === 'gu') {
-                // West/North-West subtle theme
-                root.style.setProperty('--primary', '#F67280'); // Coral
-                root.style.setProperty('--secondary', '#6C5B7B'); // Purple
+            if (['ta','te','kn','ml'].includes(lang)) {
+                root.style.setProperty('--primary', '#E84A5F');
+                root.style.setProperty('--secondary', '#2A363B');
+            } else if (['bn','or'].includes(lang)) {
+                root.style.setProperty('--primary', '#F8B195');
+                root.style.setProperty('--secondary', '#355C7D');
+            } else if (['pa','gu'].includes(lang)) {
+                root.style.setProperty('--primary', '#F67280');
+                root.style.setProperty('--secondary', '#6C5B7B');
             } else {
-                // Default theme (Hindi, English, Urdu, Marathi etc)
-                root.style.setProperty('--primary', '#FF9933'); // Saffron
-                root.style.setProperty('--secondary', '#046A38'); // Green
+                root.style.setProperty('--primary', '#FF9933');
+                root.style.setProperty('--secondary', '#046A38');
             }
-
             renderAll();
-        }
-
-        function getText(key, path = 'ui') {
-            const data = content[currentLanguage];
-            const prefix = data.ui.comingSoon;
-            let val = data[path][key];
-            if(!val && currentLanguage !== 'en' && currentLanguage !== 'hi') {
-                val = content.en[path][key]; // fallback
-            }
-            return prefix + val;
         }
 
         function renderAll() {
             const t = content[currentLanguage];
-            const prefix = t.ui.comingSoon;
-            
-            // UI Strings
-            document.getElementById('t-switch-mode').innerText = prefix + t.ui.switchMode;
-            document.getElementById('t-impact-title').innerText = prefix + t.ui.impactTitle;
-            document.getElementById('t-impact-desc').innerText = prefix + t.ui.impactDesc;
-            
-            document.getElementById('t-sec1-title').innerText = prefix + t.ui.sec1Title;
-            document.getElementById('t-sec2-title').innerText = prefix + t.ui.sec2Title;
-            document.getElementById('t-sec3-title').innerText = prefix + t.ui.sec3Title;
-            document.getElementById('t-sec4-title').innerText = prefix + t.ui.sec4Title;
-            document.getElementById('t-sec5-title').innerText = prefix + t.ui.sec5Title;
-            document.getElementById('t-sec6-title').innerText = prefix + t.ui.sec6Title;
-
-            document.getElementById('t-gen-title').innerText = prefix + t.ui.genTitle;
-            document.getElementById('t-gen-btn').innerText = prefix + t.ui.genBtn;
-            document.getElementById('t-pledge-btn').innerText = prefix + t.ui.pledgeBtn;
-            document.getElementById('t-copy-btn').innerText = prefix + t.ui.copyBtn;
-
-            // Render Sections
-            renderElectionSteps();
-            renderCandidates();
-            renderQuiz();
-            renderMyths();
-            renderRights();
-            
-            // Toggle Expert elements
-            if(currentMode === 'expert') {
-                document.getElementById('complaint-generator').classList.remove('hidden');
-            } else {
-                document.getElementById('complaint-generator').classList.add('hidden');
-            }
+            const p = t.ui.comingSoon;
+            document.getElementById('t-switch-mode').innerText = p + t.ui.switchMode;
+            document.getElementById('t-impact-title').innerText = p + t.ui.impactTitle;
+            document.getElementById('t-impact-desc').innerText = p + t.ui.impactDesc;
+            document.getElementById('t-sec1-title').innerText = p + t.ui.sec1Title;
+            document.getElementById('t-sec2-title').innerText = p + t.ui.sec2Title;
+            document.getElementById('t-sec3-title').innerText = p + t.ui.sec3Title;
+            document.getElementById('t-sec4-title').innerText = p + t.ui.sec4Title;
+            document.getElementById('t-sec5-title').innerText = p + t.ui.sec5Title;
+            document.getElementById('t-sec6-title').innerText = p + t.ui.sec6Title;
+            document.getElementById('t-gen-title').innerText = p + t.ui.genTitle;
+            document.getElementById('t-gen-btn').innerText = p + t.ui.genBtn;
+            document.getElementById('t-pledge-btn').innerText = p + t.ui.pledgeBtn;
+            document.getElementById('t-copy-btn').innerText = p + t.ui.copyBtn;
+            renderElectionSteps(); renderCandidates(); renderQuiz(); renderMyths(); renderRights();
+            document.getElementById('complaint-generator').classList.toggle('hidden', currentMode !== 'expert');
         }
 
         function renderElectionSteps() {
             const container = document.getElementById('election-steps-container');
             const data = content[currentLanguage];
-            const prefix = data.ui.comingSoon;
-            
-            container.innerHTML = data.electionSteps.map((step, index) => {
+            const p = data.ui.comingSoon;
+            container.innerHTML = data.electionSteps.map((step, i) => {
                 let text = step[currentMode];
-                return `
-                    <li class="step-item" onclick="speakText('${text.replace(/'/g, "\\'")}')">
-                        <div class="step-icon">${step.icon}</div>
-                        <div class="step-content">
-                            <div class="step-title">${prefix}Step ${index + 1}</div>
-                            <div>${prefix}${text}</div>
-                        </div>
-                    </li>
-                `;
+                return `<li class="step-item" onclick="speakText('${text.replace(/'/g,"\\'")}')"><div class="step-icon">${step.icon}</div><div class="step-content"><div class="step-title">${p}Step ${i+1}</div><div>${p}${text}</div></div></li>`;
             }).join('');
         }
 
@@ -922,232 +431,187 @@
             const constituency = document.getElementById('constituency-selector').value;
             const data = candidates[constituency];
             const container = document.getElementById('candidate-grid-container');
-            
             container.innerHTML = data.map(c => {
-                let html = `
-                    <div class="candidate-card">
-                        <div class="avatar">${c.name.split(' ').map(n=>n[0]).join('')}</div>
-                        <h3 style="margin:0">${c.name}</h3>
-                        <p style="margin:4px 0; color:#666;">${c.party}</p>
-                        <p style="font-weight:bold;">${c.promise}</p>
-                        <div class="record-indicator record-${c.record}"></div>
-                `;
-
-                if (currentMode === 'informed' || currentMode === 'expert') {
-                    let trustScore = (c.record === 'green' ? 8 : c.record === 'amber' ? 5 : 2);
-                    html += `
-                        <div style="margin-top:16px; text-align:left; font-size:0.9em;">
-                            <p>🎓 Edu: ${c.edu}</p>
-                            <p style="color: ${c.cases > 0 ? 'var(--red)' : 'inherit'}">⚠️ Cases: ${c.cases}</p>
-                            <p>💰 Assets: ₹${c.assets} L</p>
-                            <p>Last 3 Promises:</p>
-                            <div>
-                                ${c.promises.map(p => `<span class="pill" style="background:var(--${p})">${p === 'green' ? 'Kept' : p === 'red' ? 'Broken' : 'Ongoing'}</span>`).join('')}
-                            </div>
-                            <div class="trust-bar-container">
-                                <div class="trust-bar" style="width: ${trustScore * 10}%; background: ${c.record === 'red' ? 'var(--red)' : 'var(--secondary)'}"></div>
-                            </div>
-                        </div>
-                    `;
+                let html = `<div class="candidate-card"><div class="avatar">${c.name.split(' ').map(n=>n[0]).join('')}</div><h3 style="margin:0">${c.name}</h3><p style="margin:4px 0;color:#666;">${c.party}</p><p style="font-weight:bold;">${c.promise}</p><div class="record-indicator record-${c.record}"></div>`;
+                if (currentMode !== 'basic') {
+                    let ts = c.record==='green'?8:c.record==='amber'?5:2;
+                    html += `<div style="margin-top:16px;text-align:left;font-size:0.9em;"><p>🎓 ${c.edu}</p><p style="color:${c.cases>0?'var(--red)':'inherit'}">⚠️ Cases: ${c.cases}</p><p>💰 ₹${c.assets}L</p><div>${c.promises.map(p=>`<span class="pill" style="background:var(--${p})">${p==='green'?'Kept':p==='red'?'Broken':'Ongoing'}</span>`).join('')}</div><div class="trust-bar-container"><div class="trust-bar" style="width:${ts*10}%;background:${c.record==='red'?'var(--red)':'var(--secondary)'}"></div></div></div>`;
                 }
-
                 if (currentMode === 'expert') {
-                    html += `
-                        <div style="margin-top:16px; text-align:left; font-size:0.9em; border-top:1px solid #eee; padding-top:12px;">
-                            <p>📈 Win Margin: ${c.winMargin}</p>
-                            <p>👥 Turnout: ${c.turnout}%</p>
-                            <button class="primary-btn" style="width:100%; margin-top:8px;" onclick="alert('Profile Summary Copied!')">Generate Profile</button>
-                        </div>
-                    `;
+                    html += `<div style="margin-top:12px;text-align:left;font-size:0.9em;border-top:1px solid #eee;padding-top:12px;"><p>📈 Margin: ${c.winMargin}</p><p>👥 Turnout: ${c.turnout}%</p></div>`;
                 }
-
                 html += `</div>`;
                 return html;
             }).join('');
         }
 
-        // Section 3: Quiz
-        let quizAnswers = [null, null, null, null];
+        let quizAnswers = [null,null,null,null];
         function renderQuiz() {
             const container = document.getElementById('quiz-container');
             const t = content[currentLanguage];
-            const prefix = t.ui.comingSoon;
-            
-            container.innerHTML = t.quiz.map((q, i) => `
-                <div class="quiz-question">
-                    <p><strong>${i+1}. ${prefix}${q}</strong></p>
-                    <div class="quiz-options">
-                        <button class="btn-option ${quizAnswers[i] === true ? 'selected' : ''}" onclick="answerQuiz(${i}, true)">${prefix}${t.ui.yes}</button>
-                        <button class="btn-option ${quizAnswers[i] === false ? 'selected' : ''}" onclick="answerQuiz(${i}, false)">${prefix}${t.ui.no}</button>
-                        <button class="btn-option" onclick="answerQuiz(${i}, false)">${prefix}${t.ui.notSure}</button>
-                    </div>
-                </div>
-            `).join('');
-            
+            const p = t.ui.comingSoon;
+            container.innerHTML = t.quiz.map((q,i) => `<div class="quiz-question"><p><strong>${i+1}. ${p}${q}</strong></p><div class="quiz-options"><button class="btn-option ${quizAnswers[i]===true?'selected':''}" onclick="answerQuiz(${i},true)">${p}${t.ui.yes}</button><button class="btn-option ${quizAnswers[i]===false?'selected':''}" onclick="answerQuiz(${i},false)">${p}${t.ui.no}</button><button class="btn-option" onclick="answerQuiz(${i},false)">${p}${t.ui.notSure}</button></div></div>`).join('');
             checkQuizCompletion();
         }
 
-        function answerQuiz(index, isYes) {
-            quizAnswers[index] = isYes;
-            renderQuiz();
-        }
+        function answerQuiz(index, isYes) { quizAnswers[index] = isYes; renderQuiz(); }
 
         function checkQuizCompletion() {
             if(quizAnswers.includes(null)) return;
-            
-            const isReady = quizAnswers.every(a => a === true);
+            const isReady = quizAnswers.every(a => a===true);
             const resDiv = document.getElementById('quiz-result');
             const t = content[currentLanguage];
-            const prefix = t.ui.comingSoon;
-            
-            resDiv.classList.remove('hidden', 'result-success', 'result-steps');
-            
+            const p = t.ui.comingSoon;
+            resDiv.classList.remove('hidden','result-success','result-steps');
             let text = "";
             if(isReady) {
                 resDiv.classList.add('result-success');
-                text = prefix + t.quizResult.success[currentMode];
-                document.getElementById('sec-6').classList.remove('hidden'); // Show pledge
+                text = p + t.quizResult.success[currentMode];
+                document.getElementById('sec-6').classList.remove('hidden');
             } else {
                 resDiv.classList.add('result-steps');
-                text = prefix + t.quizResult.fail[currentMode];
+                text = p + t.quizResult.fail[currentMode];
                 document.getElementById('sec-6').classList.add('hidden');
             }
-            
-            resDiv.innerHTML = `<p><strong>${text}</strong></p><button class="voice-btn" onclick="speakText('${text.replace(/'/g, "\\'")}')">🔊 Listen</button>`;
+            resDiv.innerHTML = `<p><strong>${text}</strong></p><button class="voice-btn" onclick="speakText('${text.replace(/'/g,"\\'")}')">🔊 Listen</button>`;
         }
 
-        // Section 4: Myths
         let mythsFlipped = new Set();
         function renderMyths() {
             const container = document.getElementById('myths-container');
             const t = content[currentLanguage];
-            const prefix = t.ui.comingSoon;
-            
-            container.innerHTML = t.myths.map((m, i) => {
+            const p = t.ui.comingSoon;
+            container.innerHTML = t.myths.map((m,i) => {
                 let ans = m.a;
-                if(currentMode === 'informed') ans += " " + m.a_inf;
-                if(currentMode === 'expert') ans += " " + m.a_inf + " " + m.a_exp;
-                
-                let confidenceUI = '';
-                if(currentMode === 'informed' && !mythsFlipped.has(i)) {
-                    confidenceUI = `
-                        <div class="mt-4 flex gap-4" onclick="event.stopPropagation()">
-                            <button class="primary-btn" style="flex:1; background:var(--red)" onclick="trackMyth(${i}, true)">${prefix}${t.ui.thoughtTrue}</button>
-                            <button class="primary-btn" style="flex:1; background:var(--secondary)" onclick="trackMyth(${i}, false)">${prefix}${t.ui.knewFalse}</button>
-                        </div>
-                    `;
+                if(currentMode==='informed') ans += " "+m.a_inf;
+                if(currentMode==='expert') ans += " "+m.a_inf+" "+m.a_exp;
+                let confUI = '';
+                if(currentMode==='informed' && !mythsFlipped.has(i)) {
+                    confUI = `<div class="mt-4 flex gap-4" onclick="event.stopPropagation()"><button class="primary-btn" style="flex:1;background:var(--red)" onclick="trackMyth(${i},true)">${p}${t.ui.thoughtTrue}</button><button class="primary-btn" style="flex:1;background:var(--secondary)" onclick="trackMyth(${i},false)">${p}${t.ui.knewFalse}</button></div>`;
                 }
-
-                return `
-                    <div class="myth-card ${mythsFlipped.has(i) ? 'flipped' : ''}" onclick="${currentMode !== 'informed' ? `flipMyth(${i}, '${ans.replace(/'/g, "\\'")}')` : ''}">
-                        <div class="myth-inner">
-                            <div class="myth-front">
-                                <h3>❌ ${prefix}${m.q}</h3>
-                                ${confidenceUI}
-                            </div>
-                            <div class="myth-back">
-                                <h3>✅ Truth</h3>
-                                <p>${prefix}${ans}</p>
-                            </div>
-                        </div>
-                    </div>
-                `;
+                return `<div class="myth-card ${mythsFlipped.has(i)?'flipped':''}" onclick="${currentMode!=='informed'?`flipMyth(${i},'${ans.replace(/'/g,"\\'")}')`:''}}"><div class="myth-inner"><div class="myth-front"><h3>❌ ${p}${m.q}</h3>${confUI}</div><div class="myth-back"><h3>✅ Truth</h3><p>${p}${ans}</p></div></div></div>`;
             }).join('');
         }
 
         function trackMyth(index, wasWrong) {
-            mythScore.total++;
-            if(wasWrong) mythScore.wrong++;
-            
+            mythScore.total++; if(wasWrong) mythScore.wrong++;
             const t = content[currentLanguage];
-            let ans = t.myths[index].a + " " + t.myths[index].a_inf;
-            
-            flipMyth(index, ans);
-            
-            if(mythScore.total === t.myths.length) {
-                const scoreDiv = document.getElementById('myth-score');
-                scoreDiv.classList.remove('hidden');
-                scoreDiv.innerText = t.ui.comingSoon + t.ui.mythScoreText.replace('{n}', mythScore.wrong);
+            flipMyth(index, t.myths[index].a+" "+t.myths[index].a_inf);
+            if(mythScore.total===t.myths.length) {
+                const s = document.getElementById('myth-score');
+                s.classList.remove('hidden');
+                s.innerText = t.ui.comingSoon+t.ui.mythScoreText.replace('{n}', mythScore.wrong);
             }
         }
 
-        function flipMyth(index, textToSpeak) {
-            mythsFlipped.add(index);
-            renderMyths();
-            speakText(textToSpeak);
-        }
+        function flipMyth(index, text) { mythsFlipped.add(index); renderMyths(); speakText(text); }
 
-        // Section 5: Rights
         function renderRights() {
             const container = document.getElementById('rights-container');
             const data = content[currentLanguage];
-            const prefix = data.ui.comingSoon;
-            
-            container.innerHTML = data.rights.map((r, index) => {
+            const p = data.ui.comingSoon;
+            container.innerHTML = data.rights.map(r => {
                 let text = r[currentMode];
-                return `
-                    <li class="step-item" onclick="speakText('${text.replace(/'/g, "\\'")}')">
-                        <div class="step-icon">🛡️</div>
-                        <div class="step-content">
-                            <div>${prefix}${text}</div>
-                        </div>
-                    </li>
-                `;
+                return `<li class="step-item" onclick="speakText('${text.replace(/'/g,"\\'")}')"><div class="step-icon">🛡️</div><div class="step-content"><div>${p}${text}</div></div></li>`;
             }).join('');
         }
 
         function generateComplaint() {
             const name = document.getElementById('gen-name').value;
             const booth = document.getElementById('gen-booth').value;
-            if(!name || !booth) return alert("Please enter name and booth.");
-            
+            if(!name||!booth) return alert("Please enter name and booth.");
             const text = `To,\nThe Returning Officer,\n\nSubject: Violation of Election Protocol at Booth ${booth}\n\nRespected Sir/Madam,\nI, ${name}, wish to formally register a complaint regarding irregularities observed at Polling Booth ${booth}. This violates the Conduct of Election Rules, 1961.\n\nKindly initiate an inquiry.\n\nRegards,\n${name}`;
-            
             const out = document.getElementById('gen-output');
-            out.value = text;
-            out.classList.remove('hidden');
+            out.value = text; out.classList.remove('hidden');
         }
 
-        // Section 6: Pledge
         function generatePledge() {
             const name = document.getElementById('pledge-name').value;
             if(!name) return alert("Please enter your name");
-            
             document.getElementById('p-name').innerText = name;
             document.getElementById('pledge-output').classList.remove('hidden');
         }
 
         function copyPledge() {
-            const text = document.getElementById('pledge-card-ui').innerText;
-            navigator.clipboard.writeText(text).then(() => alert("Copied to clipboard!"));
+            navigator.clipboard.writeText(document.getElementById('pledge-card-ui').innerText).then(()=>alert("Copied!"));
         }
 
-        // --- Voice Synthesis ---
         function getVoiceLang() {
-            const map = {
-                en: 'en-IN', hi: 'hi-IN', ta: 'ta-IN', te: 'te-IN', 
-                bn: 'bn-IN', mr: 'mr-IN', kn: 'kn-IN', ml: 'ml-IN', 
-                pa: 'pa-IN', gu: 'gu-IN', or: 'or-IN', ur: 'ur-IN'
-            };
+            const map = { en:'en-IN', hi:'hi-IN', ta:'ta-IN', te:'te-IN', bn:'bn-IN', mr:'mr-IN', kn:'kn-IN', ml:'ml-IN', pa:'pa-IN', gu:'gu-IN', or:'or-IN', ur:'ur-IN' };
             return map[currentLanguage] || 'en-IN';
         }
 
         function speakText(text) {
-            if ('speechSynthesis' in window) {
+            if('speechSynthesis' in window) {
                 window.speechSynthesis.cancel();
-                const utterance = new SpeechSynthesisUtterance(text);
-                utterance.lang = getVoiceLang();
-                window.speechSynthesis.speak(utterance);
+                const u = new SpeechSynthesisUtterance(text.replace(/[\p{Emoji_Presentation}\p{Extended_Pictographic}]/gu,''));
+                u.lang = getVoiceLang();
+                window.speechSynthesis.speak(u);
             }
         }
 
-        function speakSection(sectionId) {
-            const section = document.getElementById(sectionId);
-            const text = section.innerText.replace(/🔊/g, '');
-            speakText(text);
+        function speakSection(id) { speakText(document.getElementById(id).innerText.replace(/🔊/g,'')); }
+
+        // ===== GEMINI CHAT LOGIC =====
+        const GEMINI_API_KEY = "AIzaSyA2fOU3J1z5WY_-wMLvaYtndv741FYB6GU";
+        const GEMINI_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${GEMINI_API_KEY}`;
+        const SYSTEM_PROMPT = `You are Jan Awaaz AI, a civic assistant for Indian voters. Help citizens with: voter registration, polling booth rights, election complaints, Indian election laws (RoPA 1950, RoPA 1951, ECI guidelines). RULES: 1) Always reply in the SAME language the user writes in. 2) Keep answers short and simple (3-5 lines). 3) Never take political sides or recommend any party or candidate. 4) If asked something outside elections/civic topics, politely redirect back.`;
+
+        let chatHistory = [];
+        let chatOpen = false;
+
+        function toggleChat() {
+            chatOpen = !chatOpen;
+            document.getElementById('chat-panel').classList.toggle('hidden', !chatOpen);
+            if(chatOpen) document.getElementById('chat-input').focus();
         }
 
-        // Initialize (Show Mode Modal)
+        function addBubble(text, type) {
+            const msgs = document.getElementById('chat-messages');
+            const div = document.createElement('div');
+            div.className = `chat-bubble bubble-${type}`;
+            div.innerHTML = text.replace(/\n/g,'<br>');
+            if(type==='ai') {
+                const btn = document.createElement('button');
+                btn.className = 'speak-btn';
+                btn.textContent = '🔊 Listen';
+                btn.onclick = () => speakText(text);
+                div.appendChild(btn);
+            }
+            msgs.appendChild(div);
+            msgs.scrollTop = msgs.scrollHeight;
+            return div;
+        }
+
+        async function sendChat() {
+            const input = document.getElementById('chat-input');
+            const userMsg = input.value.trim();
+            if(!userMsg) return;
+            input.value = '';
+            addBubble(userMsg, 'user');
+            chatHistory.push({ role:'user', parts:[{ text: userMsg }] });
+            const thinkingDiv = addBubble('Thinking... 🤔', 'thinking');
+            try {
+                const res = await fetch(GEMINI_URL, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        system_instruction: { parts:[{ text: SYSTEM_PROMPT }] },
+                        contents: chatHistory
+                    })
+                });
+                const data = await res.json();
+                const aiText = data?.candidates?.[0]?.content?.parts?.[0]?.text || "Sorry, could not get a response. Please try again.";
+                thinkingDiv.remove();
+                addBubble(aiText, 'ai');
+                chatHistory.push({ role:'model', parts:[{ text: aiText }] });
+                speakText(aiText);
+            } catch(err) {
+                thinkingDiv.remove();
+                addBubble("Something went wrong. Please check your connection.", 'ai');
+                console.error(err);
+            }
+        }
     </script>
 </body>
 </html>
