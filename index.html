@@ -554,7 +554,7 @@
 
         // ===== GEMINI CHAT LOGIC =====
         const GEMINI_API_KEY = "AIzaSyAiKKgUsl97F0AdDvhVBIpkU3tu-cxxN6A";
-        const GEMINI_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${GEMINI_API_KEY}`;
+        const GEMINI_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${GEMINI_API_KEY}`;
         const SYSTEM_PROMPT = `You are Jan Awaaz AI, a civic assistant for Indian voters. Help citizens with: voter registration, polling booth rights, election complaints, Indian election laws (RoPA 1950, RoPA 1951, ECI guidelines). RULES: 1) Always reply in the SAME language the user writes in. 2) Keep answers short and simple (3-5 lines). 3) Never take political sides or recommend any party or candidate. 4) If asked something outside elections/civic topics, politely redirect back.`;
 
         let chatHistory = [];
@@ -595,9 +595,13 @@
                 const res = await fetch(GEMINI_URL, {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({
-                        system_instruction: { parts:[{ text: SYSTEM_PROMPT }] },
-                        contents: chatHistory
+                   body: JSON.stringify({
+                       system_instruction: { parts:[{ text: SYSTEM_PROMPT }] },
+                       contents: chatHistory,
+                       generationConfig: {
+                       temperature: 0.7,
+                       maxOutputTokens: 500
+                        }
                     })
                 });
                 const data = await res.json();
